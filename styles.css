@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.calculator {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 300px;
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+#result {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #f8f9fa;
+    font-size: 24px;
+    text-align: right;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.number {
+    background: #e9ecef;
+    color: #212529;
+}
+
+.operator {
+    background: #fd7e14;
+    color: white;
+}
+
+.equals {
+    background: #28a745;
+    color: white;
+    grid-row: span 2;
+}
+
+.clear, .delete {
+    background: #dc3545;
+    color: white;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.decimal {
+    background: #e9ecef;
+    color: #212529;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.number:hover {
+    background: #dee2e6;
+}
+
+.operator:hover {
+    background: #ff922b;
+}
+
+.equals:hover {
+    background: #2fb344;
+}
+
+.clear:hover, .delete:hover {
+    background: #e03131;
+}
+
+/* Make sure display input is not editable */
+#result {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Ensure calculator has proper stacking context */
+.calculator {
+    position: relative;
+    z-index: 1;
+}
